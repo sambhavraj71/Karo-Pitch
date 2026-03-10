@@ -762,18 +762,18 @@
 <body>
   <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Karo <span>Pitch</span></div>
-            <div class="mobile-menu-btn">☰</div>
-            <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">For Startups</a></li>
-                <li><a href="#">For Investors</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#" class="nav-btn">Apply Now</a></li>
-            </ul>
-        </div>
+    <div class="nav-container">
+        <div class="logo">Karo <span>Pitch</span></div>
+        <div class="mobile-menu-btn" id="mobile-menu-btn">☰</div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="coming-soon.html">Home</a></li>
+            <li><a href="coming-soon.html">About</a></li>
+            <li><a href="coming-soon.html">For Startups</a></li>
+            <li><a href="coming-soon.html">For Investors</a></li>
+            <li><a href="coming-soon.html">Events</a></li>
+            <li><a href="coming-soon.html" class="nav-btn">Apply Now</a></li>
+        </ul>
+    </div>
     </nav>
 
  <!-- Hero Section -->
@@ -1096,4 +1096,66 @@
         </div>
     </footer>
 </body>
+    <script>
+// Mobile Menu JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const body = document.body;
+
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+
+    function toggleMenu() {
+        mobileBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.classList.toggle('menu-open');
+
+        // Change button text based on menu state
+        if (navMenu.classList.contains('active')) {
+            mobileBtn.textContent = '✕';
+        } else {
+            mobileBtn.textContent = '☰';
+        }
+    }
+
+    // Toggle menu on button click
+    mobileBtn.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on a link
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Close menu when clicking on overlay
+    overlay.addEventListener('click', toggleMenu);
+
+    // Close menu on escape key press
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                // If screen becomes desktop while menu is open, close it
+                toggleMenu();
+            }
+        }, 250);
+    });
+});
+</script>
 </html>
