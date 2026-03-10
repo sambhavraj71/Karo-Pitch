@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karo Pitch - Pitch Your Startup to India's Top Investors</title>
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1E293B;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Color Variables */
+        :root {
+            --navy: #0A1929;
+            --orange: #FF6B35;
+            --teal: #2DD4BF;
+            --light-bg: #F8FAFC;
+            --gray-text: #64748B;
+            --dark-text: #1E293B;
+            --white: #FFFFFF;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-label {
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--orange);
+            color: var(--white);
+            box-shadow: 0 4px 6px rgba(255, 107, 53, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #ff5520;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--orange);
+            color: var(--orange);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--orange);
+            color: var(--white);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--orange);
+        }
+
+        .nav-btn {
+            background-color: var(--orange);
+            color: var(--white) !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background-color: #ff5520;
+            color: var(--white) !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at 100% 0%, rgba(255,107,53,0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            color: var(--gray-text);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            margin-bottom: 3rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .trust-badge p {
+            color: var(--gray-text);
+            font-weight: 500;
+        }
+
+        .company-logos {
+            display: flex;
+            gap: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .india-map {
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .floating-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at 30% 50%, var(--orange) 0px, transparent 2px),
+                        radial-gradient(circle at 70% 30%, var(--teal) 0px, transparent 2px);
+            background-size: 50px 50px;
+            opacity: 0.2;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,107,53,0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(255,107,53,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,107,53,0); }
+        }
+
+        .play-button::after {
+            content: '▶';
+            color: white;
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(45,212,191,0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--orange);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(10,25,41,0.05);
+            margin-bottom: 1rem;
+        }
+
+        .step-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .step-card p {
+            color: var(--gray-text);
+        }
+
+        .arrow-connector {
+            display: none;
+        }
+
+        /* ===== CATEGORIES SECTION ===== */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .category-card {
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--orange);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .category-card p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+        }
+
+        .category-count {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--teal);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* ===== INVESTORS SECTION ===== */
+        .investor-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .investor-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 0.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        .investor-card:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .investor-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .investor-stats {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255,107,53,0.05) 0%, rgba(45,212,191,0.05) 100%);
+            border-radius: 1rem;
+        }
+
+        /* ===== FEATURED STARTUPS ===== */
+        .startups-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .startup-card {
+            background: var(--white);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .startup-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .startup-logo {
+            height: 120px;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3350 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .startup-content {
+            padding: 1.5rem;
+        }
+
+        .startup-category {
+            color: var(--orange);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .startup-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .startup-desc {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .startup-link {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--gray-text);
+            font-weight: 500;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3350 100%);
+            color: var(--white);
+            text-align: center;
+            border-radius: 2rem;
+            margin: 4rem 0;
+        }
+
+        .cta-content {
+            padding: 5rem 2rem;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .event-badge {
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--orange);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--orange);
+        }
+
+        .footer h4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+            
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .investor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .startups-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .investor-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fadeInUp {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+  <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Karo <span>Pitch</span></div>
+            <div class="mobile-menu-btn">☰</div>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">For Startups</a></li>
+                <li><a href="#">For Investors</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#" class="nav-btn">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+ <!-- Hero Section -->
+      <section class="hero">
+          <div class="container">
+              <div class="hero-content fadeInUp">
+                  <h1>Pitch Your Startup to India's Top Investors</h1>
+                  <p class="hero-subtext">Karo Pitch connects founders from across India—from Tier-2 and Tier-3 cities to Bharat—with investors ready to fund the next big idea.</p>
+                  <div class="hero-buttons">
+                      <a href="#" class="btn btn-primary">Apply to Pitch</a>
+                      <a href="#" class="btn btn-secondary">Explore Startups</a>
+                  </div>
+                  <div class="trust-badge">
+                      <p>Trusted by 10,000+ founders</p>
+                      <div class="company-logos">
+                          <span>🚀 StartupA</span>
+                          <span>💼 FounderB</span>
+                          <span>🌟 VentureC</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="hero-visual">
+                  <div class="floating-dots"></div>
+                  <svg class="india-map" viewBox="0 0 400 300" fill="none">
+                      <path d="M200,50 L250,100 L300,150 L250,200 L200,250 L150,200 L100,150 L150,100 Z" fill="var(--navy)" opacity="0.1" stroke="var(--orange)" stroke-width="2"/>
+                      <circle cx="200" cy="150" r="5" fill="var(--orange)"/>
+                      <circle cx="250" cy="100" r="3" fill="var(--teal)"/>
+                      <circle cx="150" cy="200" r="3" fill="var(--teal)"/>
+                      <circle cx="300" cy="150" r="3" fill="var(--teal)"/>
+                      <circle cx="100" cy="150" r="3" fill="var(--teal)"/>
+                  </svg>
+              </div>
+          </div>
+      </section>
+  
+      <!-- About Section -->
+      <section>
+          <div class="container">
+              <span class="section-label">ABOUT US</span>
+              <div class="about-grid">
+                  <div class="about-image">
+                      <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%); height: 300px; border-radius: 1rem;"></div>
+                      <div class="play-button"></div>
+                  </div>
+                  <div>
+                      <h2>Bridging Bharat's Best Founders with India's Top Investors</h2>
+                      <p style="color: var(--gray-text); margin-bottom: 1.5rem; font-size: 1.1rem;">Thousands of founders are building amazing businesses in India's smaller cities—but they lack access to investors and mentorship.</p>
+                      <p style="color: var(--gray-text); margin-bottom: 2rem;">Karo Pitch creates a structured platform where selected startups present directly to investors in curated pitch events.</p>
+                      <a href="#" class="btn btn-outline">Our Mission →</a>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <!-- How It Works -->
+      <section style="background-color: var(--light-bg);">
+          <div class="container">
+              <h2 style="text-align: center;">How Karo Pitch Works</h2>
+              <div class="steps-grid">
+                  <div class="step-card">
+                      <div class="step-icon">📄</div>
+                      <h3>Apply with Pitch Deck</h3>
+                      <p>Submit your startup details and pitch deck for review</p>
+                  </div>
+                  <div class="step-card">
+                      <div class="step-icon">✓</div>
+                      <h3>Get Shortlisted</h3>
+                      <p>Our team selects the most promising startups</p>
+                  </div>
+                  <div class="step-card">
+                      <div class="step-icon">🎤</div>
+                      <h3>Pitch Live to Investors</h3>
+                      <p>Present your business in curated pitch events</p>
+                  </div>
+                  <div class="step-card">
+                      <div class="step-icon">🚀</div>
+                      <h3>Raise Funding & Scale</h3>
+                      <p>Connect with investors and grow your business</p>
+                  </div>
+              </div>
+              <p style="text-align: center; color: var(--gray-text); margin-top: 2rem;">We review every application and select the most promising startups for each pitch event.</p>
+          </div>
+      </section>
+  
+      <!-- Who Can Apply -->
+      <section>
+          <div class="container">
+              <h2 style="text-align: center;">Who Should Apply</h2>
+              <div class="categories-grid">
+                  <div class="category-card">
+                      <div class="category-icon">🛍️</div>
+                      <h3>D2C Brands</h3>
+                      <p>Direct-to-consumer startups building innovative products</p>
+                      <span class="category-count">50+ startups</span>
+                  </div>
+                  <div class="category-card">
+                      <div class="category-icon">📱</div>
+                      <h3>Consumer Startups</h3>
+                      <p>Apps and platforms serving Indian consumers</p>
+                      <span class="category-count">75+ startups</span>
+                  </div>
+                  <div class="category-card">
+                      <div class="category-icon">🏭</div>
+                      <h3>MSMEs</h3>
+                      <p>Micro, small and medium enterprises</p>
+                      <span class="category-count">200+ startups</span>
+                  </div>
+                <div class="category-card">
+                    <div class="category-icon">💻</div>
+                    <h3>SaaS & Tech</h3>
+                    <p>Software and technology startups</p>
+                    <span class="category-count">120+ startups</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚙️</div>
+                    <h3>Manufacturing</h3>
+                    <p>Hardware and manufacturing businesses</p>
+                    <span class="category-count">45+ startups</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🌏</div>
+                    <h3>Bharat-focused</h3>
+                    <p>Startups serving Tier-2/3 cities and rural India</p>
+                    <span class="category-count">150+ startups</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn btn-outline">View All Categories →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors Section -->
+    <section style="background-color: var(--light-bg);">
+        <div class="container">
+            <h2 style="text-align: center;">Meet Investors Looking for the Next Big Startup</h2>
+            <div class="investor-grid">
+                <div class="investor-card">
+                    <div class="investor-logo">VC</div>
+                    <h4>Venture Fund</h4>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-logo">AN</div>
+                    <h4>Angel Network</h4>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-logo">MV</div>
+                    <h4>Micro VC</h4>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-logo">FO</div>
+                    <h4>Family Office</h4>
+                </div>
+            </div>
+            <div class="investor-stats">
+                <p style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">15+ investors attend each pitch event</p>
+                <a href="#" class="btn btn-primary">Become an Investor →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Startups -->
+    <section>
+        <div class="container">
+            <h2 style="text-align: center;">Startups That Pitched With Us</h2>
+            <div class="startups-grid">
+                <div class="startup-card">
+                    <div class="startup-logo">🌿</div>
+                    <div class="startup-content">
+                        <div class="startup-category">D2C Brand</div>
+                        <h3>EcoWear</h3>
+                        <p class="startup-desc">Sustainable fashion for modern India</p>
+                        <a href="#" class="startup-link">Read Story →</a>
+                    </div>
+                </div>
+                <div class="startup-card">
+                    <div class="startup-logo">🤖</div>
+                    <div class="startup-content">
+                        <div class="startup-category">SaaS</div>
+                        <h3>SmartInventory</h3>
+                        <p class="startup-desc">AI-powered inventory management</p>
+                        <a href="#" class="startup-link">Read Story →</a>
+                    </div>
+                </div>
+                <div class="startup-card">
+                    <div class="startup-logo">📦</div>
+                    <div class="startup-content">
+                        <div class="startup-category">Manufacturing</div>
+                        <h3>EcoPack</h3>
+                        <p class="startup-desc">Eco-friendly packaging for MSMEs</p>
+                        <a href="#" class="startup-link">Read Story →</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn btn-outline">View All Featured Startups →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About KaroStartup -->
+    <section style="background-color: var(--navy); color: var(--white);">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--white);">Built by KaroStartup</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.8); margin-bottom: 3rem;">India's Largest Startup Storytelling Platform</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10,000+</h3>
+                    <p>Stories Published</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5,000+</h3>
+                    <p>Founders Featured</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1M+</h3>
+                    <p>Community Reach</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; max-width: 700px; margin: 0 auto; color: rgba(255,255,255,0.9);">
+                "For 5 years, we've been showcasing founder journeys. Now we're connecting them directly with investors through Karo Pitch."
+            </p>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn btn-primary">Learn More About KaroStartup</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section>
+        <div class="container">
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Pitch Your Startup?</h2>
+                    <p>Join 500+ founders who have already applied for the upcoming pitch events.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary">Apply Now</a>
+                        <a href="#" class="btn btn-secondary" style="background: transparent; border-color: var(--white); color: var(--white);">Partner With Us</a>
+                    </div>
+                    
+                    <div class="event-badge">
+                        Next Event: December 15, 2024 | Applications Close: November 30, 2024
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">Karo <span>Pitch</span></div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">A KaroStartup Initiative</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon">📱</a>
+                        <a href="#" class="social-icon">💼</a>
+                        <a href="#" class="social-icon">🐦</a>
+                        <a href="#" class="social-icon">📘</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>For Startups</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">How to Apply</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>For Investors</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Join as Investor</a></li>
+                        <li><a href="#">Past Events</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>© 2024 KaroStartup. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
