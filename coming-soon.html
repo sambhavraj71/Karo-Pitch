@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Karo Pitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(145deg, #f9fafb 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .container {
+            max-width: 42rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 3rem 2rem;
+            border: 1px solid #f0f2f5;
+        }
+
+        /* Simple rocket animation */
+        .rocket-icon {
+            font-size: 4rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1e293b, #2d3c53);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fde68a, #fcd34d);
+            padding: 0.2rem 0.8rem;
+            border-radius: 100px;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            border: 1px solid #fbbf24;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 32rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2.5rem 0;
+        }
+
+        .feature-item {
+            background: #f1f4f9;
+            border-radius: 100px;
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #1e293b;
+            color: white;
+            font-weight: 600;
+            font-size: 1.125rem;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #0f172a;
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+        }
+
+        .back-link {
+            margin-top: 2rem;
+            display: inline-block;
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 0.2rem;
+        }
+
+        .back-link:hover {
+            color: #1e293b;
+            border-bottom-color: #64748b;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #e2e8f0;
+            margin: 2rem auto;
+            width: 8rem;
+        }
+
+        .footer-note {
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-card">
+            <!-- Animated Rocket -->
+            <div class="rocket-icon">
+                🚀
+            </div>
+
+            <!-- Main Heading -->
+            <h1>Launching Soon</h1>
+
+            <!-- Badge -->
+            <div class="highlight">
+                ✨ Future Enhancement
+            </div>
+
+            <!-- Description -->
+            <p>
+                You've discovered a feature we're currently building! Our team is working hard to bring this part of Karo Pitch to life. 
+                It will be ready for you shortly.
+            </p>
+
+            <!-- Visual cues for features (optional, based on your site's content) -->
+            <div class="features-list">
+                <span class="feature-item">📊 Investor Dashboard</span>
+                <span class="feature-item">📈 Application Tracker</span>
+                <span class="feature-item">🤝 Mentor Connect</span>
+                <span class="feature-item">📅 Event Calendar</span>
+            </div>
+
+            <hr>
+
+            <!-- Inspiring message -->
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                <span style="background: #f1f5f9; padding: 0.2rem 0.5rem; border-radius: 8px;">✨</span> 
+                <strong>Bridging Bharat's best founders with top investors</strong> 
+                <span style="background: #f1f5f9; padding: 0.2rem 0.5rem; border-radius: 8px;">✨</span>
+            </p>
+
+            <!-- Primary action button -->
+            <a href="https://karo-pitch-kappa.vercel.app" class="cta-button">
+                ← Back to Homepage
+            </a>
+
+            <!-- Optional subtle link back -->
+            <div>
+                <a href="https://karo-pitch-kappa.vercel.app" class="back-link">
+                    Return to Karo Pitch main site
+                </a>
+            </div>
+
+            <div class="footer-note" style="margin-top: 2rem;">
+                ⚡ 10,000+ founders trust us
+            </div>
+        </div>
+    </div>
+</body>
+</html>
